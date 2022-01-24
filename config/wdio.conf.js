@@ -3,7 +3,6 @@ exports.config = {
     specs: ['features/**/*.feature'],
     logLevel: 'info',
     bail: 0,
-    baseUrl: 'http://localhost',
     waitforTimeout: 10000,
     connectionRetryTimeout: 120000,
     connectionRetryCount: 3,
@@ -12,7 +11,7 @@ exports.config = {
     reporters: ['spec',['allure', {outputDir: 'allure-results'}]],
     cucumberOpts: {
         // <string[]> (file/dir) require files before executing features
-        require: ['./features/step-definitions/steps.js'],
+        require: ['./features/step-definitions/*.steps.js'],
         // <boolean> show full backtrace for errors
         backtrace: false,
         // <string[]> ("extension:module") require files with the given EXTENSION after requiring MODULE (repeatable)
@@ -36,7 +35,6 @@ exports.config = {
     },
 
     afterStep: async (step, scenario, result, context) => {
-        console.log(result);
         if (result.error !== undefined) {
             await driver.takeScreenshot();
           }

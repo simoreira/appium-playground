@@ -1,16 +1,16 @@
 import BaseScreen from './Base.screen';
 
-class DashboardScreen extends BaseScreen {
+class SettingsScreen extends BaseScreen {
     constructor() {
-        super("~dashboard");
+        super("~settings");
     }
 
     async screen() {
-        return await $('~dashboard');
+        return await $('~settings');
     }
 
     async title() {
-        return await $('~dashboard-title');
+        return await $('~settings-title')
     }
 
     async titleText() {
@@ -20,4 +20,4 @@ class DashboardScreen extends BaseScreen {
 
 }
 
-export default new DashboardScreen();
+export default new SettingsScreen();

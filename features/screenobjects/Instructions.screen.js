@@ -1,5 +1,3 @@
-
-
 import BaseScreen from './Base.screen';
 
 class InstructionsScreen extends BaseScreen {

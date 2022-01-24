@@ -12,27 +12,33 @@ class BottomBar {
     }
 
     async waitInstructionsTab() {
-        await this.instructionsTab().waitForDisplayed({ timeout: 20000 });
+        const instructionsTab = await this.instructionsTab();
+        await instructionsTab.waitForDisplayed({ timeout: 20000 });
     }
 
     async waitDashboardTab() {
-        await this.dashboardTab().waitForDisplayed({ timeout: 20000 });
+        const dashboardTab = await this.dashboardTab();
+        await dashboardTab.waitForDisplayed({ timeout: 20000 });
     }
 
     async waitSettingsTab() {
-        await this.settingsTab().waitForDisplayed({ timeout: 20000 });
+        const settingsTab = await this.settingsTab();
+        await settingsTab.waitForDisplayed({ timeout: 20000 });
     }
 
     async clickInstructionsTab() {
-        await this.instructionsTab.click();
+        const instructionsTab = await this.instructionsTab();
+        return await instructionsTab.click();
     }
 
     async clickDashboardTab() {
-        await this.dashboardTab.click();
+        const dashboardTab = await this.dashboardTab();
+        return await dashboardTab.click();
     }
 
     async clickSettingsTab() {
-        await this.settingsTab.click();
+        const settingsTab = await this.settingsTab();
+        return await settingsTab.click();
     }
     
     
