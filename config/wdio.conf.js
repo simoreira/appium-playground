@@ -1,8 +1,6 @@
 exports.config = {
     port: 4723,
-    specs: [
-        './features/**/*.feature'
-    ],
+    specs: ['features/**/*.feature'],
     logLevel: 'info',
     bail: 0,
     baseUrl: 'http://localhost',
@@ -36,4 +34,11 @@ exports.config = {
         // <boolean> Enable this config to treat undefined definitions as warnings.
         ignoreUndefinedDefinitions: false
     },
+
+    afterStep: async (step, scenario, result, context) => {
+        console.log(result);
+        if (result.error !== undefined) {
+            await driver.takeScreenshot();
+          }
+    }
 }

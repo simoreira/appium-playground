@@ -6,7 +6,6 @@ config.capabilities = [
         avd: "Pixel_5_API_30",
         automationName: "UIAutomator2",
         app: "./apps/AwesomeApp.apk",
-
     },
 ];
 
