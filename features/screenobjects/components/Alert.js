@@ -1,20 +1,12 @@
 import getSelectorByPlatform from "../../helpers/getSelectorByPlatform";
 
-const titleSelector = getSelectorByPlatform("android:id/alertTitle");
-const messageSelector = getSelectorByPlatform("android:id/message");
-const buttonSelector = getSelectorByPlatform("android:id/button1");
-
 class Alert {
-    async title() {
-        return await $(titleSelector);
-    }
-
-    async message() {
-        return await $(messageSelector);
+    async alert() {
+       return driver.isAndroid ? await $(getSelectorByPlatform("android:id/alertTitle")) : await $("-ios predicate string:type == \'XCUIElementTypeAlert\'");
     }
 
     async button() {
-        return await $(buttonSelector);
+        return driver.isAndroid ? await $(getSelectorByPlatform("android:id/button1")) : await $("~Ok");
     }
 
     async clickButton() {
@@ -22,9 +14,9 @@ class Alert {
         await button.click();
     }
 
-    async isTitleVisible() {
-        const title = await this.title();
-        const isDisplayed = await title.isDisplayed();
+    async isAlertVisible() {
+        const alert = await this.alert();
+        const isDisplayed = await alert.isDisplayed();
         return isDisplayed;
     }
 }

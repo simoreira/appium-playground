@@ -33,8 +33,7 @@ When("I click on the sidemenu button", async () => {
     await SideMenu.clickSidemenuButton();
 })
 
-Then("I should see an alert with a title and button", async () => {
-    expect(await Alert.title()).toBeDisplayed();
+Then("I should see an alert with a button", async () => {
     expect(await Alert.button()).toBeDisplayed();
 })
 
@@ -43,7 +42,7 @@ When("I click on the alert button", async () => {
 })
 
 Then("The alert should disappear", async () => {
-    expect(await Alert.isTitleVisible()).toBe(false);
+    expect(await Alert.isAlertVisible()).toBe(false);
 })
 
 

@@ -6,6 +6,6 @@ Scenario: Open the sidemenu and accept the alert
     When I drag from the left edge of the screen to the right 
     Then I should see the sidemenu on the left
     And I click on the sidemenu button
-    Then I should see an alert with a title and button
+    Then I should see an alert with a button
     And I click on the alert button
     Then The alert should disappear
