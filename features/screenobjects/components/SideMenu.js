@@ -9,7 +9,8 @@ class SideMenu {
     }
 
     async clickSidemenuButton() {
-        await this.button().click();
+        const button = await this.button();
+        await button.click();
     }
 }
 

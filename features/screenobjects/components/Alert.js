@@ -12,7 +12,13 @@ class Alert {
     }
 
     async clickButton() {
-        return await this.button().click();
+        const button = await this.button();
+        await button.click();
+    }
+
+    async isTitleVisible() {
+        const title = await this.title();
+        return await title.isDisplayed();
     }
 }
 export default new Alert();

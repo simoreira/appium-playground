@@ -1,7 +1,7 @@
 exports.config = {
     port: 4723,
     specs: ['features/**/*.feature'],
-    logLevel: 'info',
+    logLevel: 'debug',
     bail: 0,
     waitforTimeout: 10000,
     connectionRetryTimeout: 120000,
@@ -10,6 +10,7 @@ exports.config = {
     framework: 'cucumber',
     reporters: ['spec',['allure', {outputDir: 'allure-results'}]],
     cucumberOpts: {
+        requireModule: ['@babel/register'],
         // <string[]> (file/dir) require files before executing features
         require: ['./features/step-definitions/*.steps.js'],
         // <boolean> show full backtrace for errors

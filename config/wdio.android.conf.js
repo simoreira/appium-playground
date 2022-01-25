@@ -7,6 +7,7 @@ config.capabilities = [
         automationName: "UIAutomator2",
         app: "./apps/AwesomeApp.apk",
         "settings[ignoreUnimportantViews]": true,
+        maxInstances: 1
     },
 ];
 
