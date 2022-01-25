@@ -1,11 +1,16 @@
+import getSelectorByPlatform from "../../helpers/getSelectorByPlatform";
+
+const sidemenuSelector = getSelectorByPlatform("sidemenu");
+const sidemenuButtonSelector = getSelectorByPlatform("sidemenuButton");
+
 class SideMenu {
     async sideMenu() {
-        return await $('~sidemenu');
+        return await $(sidemenuSelector);
 
     }
 
     async button() {
-        return await $('android=new UiSelector().resourceId(\"sidemenuButton\")')
+        return await $(sidemenuButtonSelector);
     }
 
     async clickSidemenuButton() {

@@ -1,12 +1,15 @@
 import BaseScreen from './Base.screen';
+import getSelectorByPlatform from '../helpers/getSelectorByPlatform';
+
+const instructionsScreenSelector = getSelectorByPlatform("instructions");
 
 class InstructionsScreen extends BaseScreen {
     constructor() {
-        super("~instructions");
+        super(instructionsScreenSelector);
     }
 
     async screen() {
-        return await $('~instructions');
+        return await $(instructionsScreenSelector);
     }
 
 }

@@ -1,14 +1,20 @@
+import getSelectorByPlatform from "../../helpers/getSelectorByPlatform";
+
+const instructionsTabSelector = getSelectorByPlatform("Instructions tab");
+const dashboardTabSelector = getSelectorByPlatform("Dashboard tab");
+const settingsTabSelector = getSelectorByPlatform("Settings tab");
+
 class BottomBar {
     async instructionsTab() {
-        return await $('android=new UiSelector().resourceId(\"Instructions tab\")');
+        return await $(instructionsTabSelector);
     }
 
     async dashboardTab() {
-        return await $('android=new UiSelector().resourceId(\"Dashboard tab\")');
+        return await $(dashboardTabSelector);
     }
 
     async settingsTab() {
-        return await $('android=new UiSelector().resourceId(\"Settings tab\")');
+        return await $(settingsTabSelector);
     }
 
     async waitInstructionsTab() {

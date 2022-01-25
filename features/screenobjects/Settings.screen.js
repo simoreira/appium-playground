@@ -1,16 +1,20 @@
 import BaseScreen from './Base.screen';
+import getSelectorByPlatform from '../helpers/getSelectorByPlatform';
+
+const settingsScreenSelector = getSelectorByPlatform("settings");
+const titleSelector = getSelectorByPlatform("settings-title");
 
 class SettingsScreen extends BaseScreen {
     constructor() {
-        super("~settings");
+        super(settingsScreenSelector);
     }
 
     async screen() {
-        return await $('~settings');
+        return await $(settingsScreenSelector);
     }
 
     async title() {
-        return await $('~settings-title')
+        return await $(titleSelector);
     }
 
     async titleText() {

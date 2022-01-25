@@ -12,6 +12,6 @@ When("I go to the Dashboard screen" , async () => {
 });
 
 // Test to be failing on purporse
-Then("I should see the btc button", async () => {
-    expect(await DashboardScreen.isBitcoinButtonVisible()).toBe(false);
+Then("I should see the btc name", async () => {
+    expect(await DashboardScreen.isBitcoinNameVisible()).toBe(false);
 });

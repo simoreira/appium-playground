@@ -1,16 +1,25 @@
 import BaseScreen from './Base.screen';
+import getSelectorByPlatform from '../helpers/getSelectorByPlatform';
+
+const dashboardScreenSelector = getSelectorByPlatform("dashboard");
+const titleSelector = getSelectorByPlatform("dashboard-title");
+const btcNameSelector = getSelectorByPlatform("Coin-btc-name");
 
 class DashboardScreen extends BaseScreen {
     constructor() {
-        super("~dashboard");
+        super(dashboardScreenSelector);
     }
 
     async screen() {
-        return await $('~dashboard');
+        return await $(dashboardScreenSelector);
     }
 
     async title() {
-        return await $('~dashboard-title');
+        return await $(titleSelector);
+    }
+
+    async bitcoinName() {
+        return await $(btcNameSelector);
     }
 
     async titleText() {
@@ -18,13 +27,10 @@ class DashboardScreen extends BaseScreen {
         return await text.getText();
     }
 
-    async bitcoinButton() {
-        return await $("~Coin-btc");
-    }
-
-    async isBitcoinButtonVisible() {
-        const btcButton = await this.bitcoinButton();
-        return await btcButton.isDisplayed();
+    async isBitcoinNameVisible() {
+        const btcName = await this.bitcoinName();
+        const isDisplayed = btcName.isDisplayed();
+        return isDisplayed;
     }
 
 }
