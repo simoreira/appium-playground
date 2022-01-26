@@ -1,7 +1,7 @@
 exports.config = {
     port: 4723,
     specs: ['features/**/*.feature'],
-    logLevel: 'debug',
+    logLevel: 'info',
     bail: 0,
     waitforTimeout: 10000,
     connectionRetryTimeout: 120000,
@@ -34,7 +34,7 @@ exports.config = {
         // <boolean> Enable this config to treat undefined definitions as warnings.
         ignoreUndefinedDefinitions: false
     },
-
+    // for screenshots when a step fails
     afterStep: async (step, scenario, result, context) => {
         if (result.error !== undefined) {
             await driver.takeScreenshot();
