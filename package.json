@@ -3,7 +3,7 @@
     "version": "0.1.0",
     "scripts": {
         "test:android": "wdio config/wdio.android.conf.js",
-        "test:ios": "dio config/wdio.ios.conf.js",
+        "test:ios": "wdio config/wdio.ios.conf.js",
         "open:report": "allure open ./allure-reports",
         "generate:report": "allure generate --clean ./allure-results -o ./allure-reports"
     },
